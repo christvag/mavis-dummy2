@@ -222,7 +222,7 @@
     pointer-events:none;z-index:1;
   }
   .hero-grid{
-    display:grid;grid-template-columns: 1fr 1fr;gap:clamp(30px,5vw,72px);
+    display:grid;grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);gap:clamp(30px,5vw,72px);
     align-items:center;
   }
   @media (max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}}
@@ -684,6 +684,9 @@
   .footer-grid{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
   .footer-grid h3{font-size:var(--step-2);font-weight:500;max-width:18ch;color:var(--ink)}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:40px;padding-top:24px;border-top:1px solid var(--line-soft);flex-wrap:wrap;gap:12px}
+  /* #ft-legal / #ft-address — footer legal + business address block */
+  #ft-legal{display:flex;flex-direction:column;gap:4px}
+  #ft-address{font-style:normal;color:var(--ink-mute)}
 
   /* ========== STICKY CTA ========== */
   .sticky-cta{
@@ -1188,7 +1191,10 @@
       </a>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span id="yr"></span> MAVIS &middot; An AI agentic operator, human&#8209;backed by trained VAs.</span>
+      <div id="ft-legal">
+        <span>&copy; <span id="yr"></span> MAVIS &middot; An AI agentic operator, human&#8209;backed by trained VAs.</span>
+        <address id="ft-address">586 Gulf Ave, Staten Island, NY 10314</address>
+      </div>
       <span>Engineered for businesses &mdash; not demos.</span>
     </div>
   </div>
